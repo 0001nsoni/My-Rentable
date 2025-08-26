@@ -1,61 +1,72 @@
-# RentableNFT Marketplace Contract
+# RentableNFT Marketplace
 
-This Clarity smart contract enables a decentralized marketplace for renting NFTs (gaming items, metaverse assets, utility tokens) with automated return mechanisms. It supports listing NFTs for rent, renting them for a specified duration, and returning them after the rental period.
+![RentableNFT Marketplace Banner](WhatsApp Image 2025-08-26 at 14.27.07_c8a2515b.jpg)
 
-## Features
+## Project Description
 
-- **NFT Escrow:** NFTs are held in escrow by the contract during the rental period.
-- **Rental Listings:** Owners can list their NFTs for rent, specifying price and duration.
-- **Automated Return:** NFTs are automatically returned to the owner after the rental period.
-- **Payment Handling:** Rental payments are transferred to the NFT owner.
-- **Query Functions:** Read-only functions to fetch listings and rentals.
+RentableNFT Marketplace is a decentralized smart contract built on the Stacks blockchain using Clarity. It enables users to rent out their NFTs (gaming items, metaverse assets, utility tokens) in a secure and automated manner. The contract manages NFT escrow, rental payments, and ensures the NFT is returned to the owner after the rental period, eliminating the need for intermediaries.
 
-## Contract Functions
+## Project Vision
 
-### Public Functions
+Our goal is to create a transparent, trustless, and user-friendly NFT rental ecosystem. We aim to:
 
-- `create-rental-listing(nft-contract, token-id, rental-price, rental-duration)`
-  - List an NFT for rent. Transfers the NFT to contract escrow.
-- `rent-nft-item(listing-id)`
-  - Rent an NFT. Transfers payment to owner and NFT to renter.
-- `return-rented-item(rental-id)`
-  - Return the rented NFT after the rental period. Transfers NFT back to owner.
+- **Empower NFT Owners**: Monetize digital assets by renting them out securely
+- **Simplify Rentals**: Automate the rental process with smart contracts and escrow
+- **Ensure Security**: NFTs are held in escrow and returned automatically after rental
+- **Promote Transparency**: All transactions and rental terms are recorded on-chain
+- **Enable Innovation**: Lay the foundation for advanced NFT utility and sharing models
 
-### Read-Only Functions
+## Future Scope
 
-- `get-rental-listing(listing-id)`
-  - Returns details of a rental listing.
-- `get-active-rental(rental-id)`
-  - Returns details of an active rental.
-- `get-next-listing-id()`
-  - Returns the next available listing ID.
-- `get-next-rental-id()`
-  - Returns the next available rental ID.
+The RentableNFT Marketplace is designed for extensibility. Planned enhancements include:
 
-## Data Structures
+### Phase 2 - Advanced Rental Features
+- **Partial Rental Periods**: Support for early returns and dynamic pricing
+- **Batch Rentals**: Rent multiple NFTs in a single transaction
+- **Reputation System**: Track renter reliability and owner responsiveness
 
-- **rental-listings:** Stores active and inactive rental listings.
-- **active-rentals:** Stores currently rented NFTs and their details.
+### Phase 3 - Ecosystem Integration
+- **Cross-Contract Rentals**: Support for NFTs from multiple contracts
+- **Marketplace UI**: Web interface for browsing and managing rentals
+- **Analytics Dashboard**: Insights into rental activity and asset utilization
 
-## Error Codes
+### Phase 4 - Community & Governance
+- **DAO Governance**: Community-driven decisions on rental terms and fees
+- **Reward System**: Incentives for active renters and owners
+- **Insurance Layer**: Optional coverage for lost or damaged NFTs
 
-- `err-owner-only` (u100): Only the owner can perform this action.
-- `err-not-authorized` (u101): Unauthorized action.
-- `err-item-not-available` (u102): Item is not available for rent.
-- `err-rental-expired` (u103): Rental period has expired.
-- `err-rental-not-expired` (u104): Rental period has not expired.
-- `err-insufficient-payment` (u105): Payment is insufficient.
-- `err-item-not-found` (u106): Item not found.
-- `err-already-rented` (u107): Item is already rented.
+## Core Functions
 
-## Usage
+### 1. Create Rental Listing
+- **Escrow Transfer**: NFT is transferred to contract for secure holding
+- **Custom Terms**: Owner sets rental price and duration
+- **Listing Management**: Track active and inactive listings
 
-1. **Deploy the contract** on the Stacks blockchain.
-2. **List an NFT for rent** using `create-rental-listing`.
-3. **Rent an NFT** using `rent-nft-item`.
-4. **Return the NFT** after the rental period using `return-rented-item`.
+### 2. Rent NFT Item
+- **Payment Handling**: Renter pays the specified price to the owner
+- **NFT Transfer**: NFT is transferred from escrow to the renter
+- **Rental Record**: Rental details are stored on-chain
 
-## Requirements
+### 3. Return Rented Item
+- **Automated Return**: NFT is transferred back to the owner after rental period
+- **Reactivation**: Listing can be reactivated for future rentals
 
-- The NFT contract must implement the `rentable-nft-trait` (transfer and get-owner functions).
-- The contract principal must be able to hold
+## Technical Features
+
+- **Escrow Mechanism**: NFTs are securely held by the contract during rentals
+- **Error Handling**: Comprehensive error codes for robust validation
+- **Read-Only Queries**: Functions to fetch listings and rental details
+- **Counters**: Track next available listing and rental IDs
+
+## Contract Address Details
+
+- **Network**: Stacks Mainnet/Testnet
+- **Contract Name**: RentableNFT Marketplace
+- **Contract Address**: ST1CCXP15KBVPQ061GQ228GY1E12RF5JWJ56QJ9CG.TravelInsuranceSystem
+- **Transaction ID**: 0x23137d184bfcbas5426f73eda265cd68016a3a40d8168449930890a41f5ee
+- **Block Height**: #3528355
+- **Deployment Date**: August 26, 2025
+
+---
+
+*RentableNFT Marketplace is part of the evolving NFT utility ecosystem on Stacks, leveraging Bitcoin security for trustless digital asset management. Join us in building the future of NFT rentals.*
