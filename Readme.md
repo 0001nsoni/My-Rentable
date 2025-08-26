@@ -1,6 +1,6 @@
 # RentableNFT Marketplace
 
-![RentableNFT Marketplace Banner](WhatsApp Image 2025-08-26 at 14.27.07_c8a2515b.jpg)
+![RentableNFT Marketplace Banner](img.jpg)
 
 ## Project Description
 
